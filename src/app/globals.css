@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F1EEF1;
+  --foreground: #171717;
+  --font-family: 'Nunito Sans', sans-serif; /* Set your font family here */
+  --primary-color: #491247; /* Example of a primary color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-family);
+  @apply text-base; /* Apply base text styles from Tailwind */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold; /* Use Tailwind utilities for headings */
+}
+
+p {
+  @apply mb-4; /* Add bottom margin to paragraphs */
+}
+
+/* Add responsive styles for typography */
+@media (min-width: 640px) {
+  body {
+    @apply text-lg; /* Larger text on small screens and up */
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    @apply text-xl; /* Even larger text on medium screens and up */
+  }
+}
