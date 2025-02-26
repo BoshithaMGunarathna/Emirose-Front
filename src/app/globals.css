@@ -19,8 +19,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  width: 100%;
   font-family: var(--font-family);
-  @apply text-base; /* Apply base text styles from Tailwind */
+  @apply text-base overflow-x-hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,3 +44,5 @@ p {
     @apply text-xl; /* Even larger text on medium screens and up */
   }
 }
+
+
