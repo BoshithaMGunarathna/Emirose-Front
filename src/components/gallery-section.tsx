@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function GallerySection() {
   return (
-    <section className="container py-12 md:py-16">
+    <section className="w-full  py-12 md:py-16">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-purple-900 mb-4">Our Gallery</h2>
         <p className="text-gray-600 max-w-3xl mx-auto">
