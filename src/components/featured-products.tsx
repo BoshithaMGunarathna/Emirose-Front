@@ -37,7 +37,7 @@ export function FeaturedProducts() {
   const gridProducts = products.slice(1, 5)
 
   return (
-    <section className="container py-12 md:py-16">
+    <section className=" py-12 md:py-16   sm:px-6 lg:px-8">
       <div className="grid gap-6 md:grid-cols-[1.2fr,2fr]">
         <div className="pl-16 pr-12 pt-12 bg-[#FFF5FF] min-w-[650px]">
           <div className="mb-8">
