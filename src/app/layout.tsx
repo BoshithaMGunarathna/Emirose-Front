@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"], 
+  weight: ["300", "400", "600", "700"],
 });
 
 
@@ -35,10 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased`}
       >
-        <div className="container mx-auto  sm:px-6 lg:px-8">
+        <div className="container min-w-full ">
           {children}
         </div>
       </body>
