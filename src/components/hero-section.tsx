@@ -7,7 +7,7 @@ import { longArrow, heart } from "../../public/icons/index"
 
 export function HeroSection() {
   return (
-    <section className="container pl-20 grid grid-cols-1 gap-6  md:grid-cols-3 md:py-16">
+    <section className=" pl-20   sm:px-6 lg:px-8 grid grid-cols-1 gap-6  md:grid-cols-3 md:py-16">
 
       {/* 1st column */}
       <div className="flex flex-col justify-start space-y-4 pl-20 pr-10 pb-20 gap-5">
