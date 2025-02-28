@@ -26,7 +26,7 @@ export function HeroSection() {
             src="/images/heroImg.png"
             alt="Elegant Flowers"
             fill
-            className="object-contain" // Use object-contain to ensure full visibility
+            className="object-contain" 
             priority
           />
         </div>
