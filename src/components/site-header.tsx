@@ -59,7 +59,8 @@ export function SiteHeader() {
               key={item.name}
               href={item.path}
               className={`text-sm font-medium transition-colors ${
-                pathname === item.path
+                (item.path === "/shop" && pathname.startsWith("/shop")) || 
+                (item.path !== "/shop" && pathname === item.path)
                   ? "text-white bg-[#772B75] px-4 py-1 rounded"
                   : "text-black"
               }`}
