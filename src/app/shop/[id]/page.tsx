@@ -58,46 +58,47 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="min-h-screen ">
             <SiteHeader />
             {/* Header */}
-            <div className="bg-pink-50/50">
-                <div className="container py-12">
+            <div className="">
+                <div className=" py-12">
                     <h1 className="text-[50px] font-semibold text-[#491247] mb-6 pl-10 pt-16 pb-16 bg-[#FFF5FF]">Item Details</h1>
                 </div>
             </div>
 
             {/* Product Details */}
-            <div className="container py-8">
-                <Link href="/shop" className="inline-flex items-center text-gray-600 hover:text-purple-900 mb-8">
-                    <ArrowLeft className="mr-2 h-4 w-4" />
+            <div className=" py-8">
+                <Link href="/shop" className=" pl-20 inline-flex items-center text-gray-600 hover:text-purple-900 mb-8">
+                    <ArrowLeft className=" mr-2 h-4 w-4" />
                     Back to Store
                 </Link>
 
-                <div className="grid md:grid-cols-2 gap-12">
-                    <div className="relative aspect-square">
+                <div className="pl-20 pr-20 grid md:grid-cols-2 gap-12">
+                    <div className="relative w-full flex justify-center items-center">  
                         <Image
                             src={product.imageUrl || "/placeholder.svg"}
                             alt={product.name}
                             fill
-                            className="object-cover rounded-lg"
+                            className="object-contain"
                         />
                     </div>
 
+
                     <div className="space-y-6">
                         <div className="flex justify-between items-start">
-                            <h2 className="text-3xl font-bold text-purple-900">{product.name}</h2>
+                            <h2 className="text-[30px] font-semibold text-[#491247]">{product.name}</h2>
                             <Button variant="outline" size="icon" className="rounded-lg">
                                 <Heart className="h-5 w-5" />
                             </Button>
                         </div>
 
-                        <p className="text-gray-600">{product.description}</p>
+                        <p className="text-[#1E1E1E] text-[20px] font-regular">{product.description}</p>
 
-                        <div className="text-3xl font-bold text-purple-900">Rs {product.price.toFixed(2)}</div>
+                        <div className="text-[30px] font-bold text-[#491247]">Rs {product.price.toFixed(2)}</div>
 
                         <div className="space-y-2">
-                            <div className="text-gray-600">
-                                Product Category: <span className="text-purple-900">{product.category}</span>
+                            <div className="text-[#000000] text-[20px] font-medium ">
+                                Product Category: <span >{product.category}</span>
                             </div>
-                            <div className="flex items-center text-purple-900">
+                            <div className="flex items-center text-[[#491247]] text-[20px] font-medium">
                                 <ShoppingCart className="mr-2 h-4 w-4" />
                                 Free Delivery
                             </div>
@@ -105,33 +106,33 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
                         <div className="flex items-center gap-4">
                             <Button variant="outline" size="icon" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
-                                <Minus className="h-4 w-4" />
+                                <Minus className="h-4 w-4 text-[#491247]" />
                             </Button>
-                            <span className="text-xl font-medium w-12 text-center">{quantity}</span>
+                            <span className="text-xl font-medium w-12 text-center text-[#491247]">{quantity}</span>
                             <Button variant="outline" size="icon" onClick={() => setQuantity(quantity + 1)}>
-                                <Plus className="h-4 w-4" />
+                                <Plus className="h-4 w-4 text-[#491247]" />
                             </Button>
-                            <Button variant="outline" className="ml-4" onClick={() => { }}>
+                            <Button  className="ml-4" onClick={() => { }}>
                                 <Heart className="mr-2 h-4 w-4" />
                                 Add to Wishlist
                             </Button>
                         </div>
 
                         <div className="flex gap-4">
-                            <Button className="flex-1" variant="outline">
+                            <Button className="flex-1 border border-[#491247] text-[#491247] text-[18px] " >
                                 <ShoppingCart className="mr-2 h-4 w-4" />
                                 Add to Cart
                             </Button>
-                            <Button className="flex-1 bg-purple-900 hover:bg-purple-800">Buy Now</Button>
+                            <Button className="flex-1 bg-[#491247] text-white hover:bg-[#491247] text-[18px]">Buy Now</Button>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Related Products Section */}
-            <section className="container py-16">
-                <h3 className="text-center text-sm text-purple-900 mb-2">You Might Also Like</h3>
-                <h2 className="text-3xl font-bold text-purple-900 text-center mb-12">Related Products</h2>
+            <section className="pl-20 pr-20 py-16">
+                <h3 className="text-center text-sm text-[#491247] mb-2">You Might Also Like</h3>
+                <h2 className="text-3xl font-bold text-[#491247] text-center mb-12">New Arrivals</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     {relatedProducts.map((product) => (
