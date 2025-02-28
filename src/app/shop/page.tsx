@@ -22,7 +22,7 @@ export default function ShopPage() {
                 </div>
 
 
-                <div className="grid grid-cols-1 pl-20 pr-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+                <div className=" pl-20 pr-20 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
                 {products.map((product) => (
                     <Link key={product.id} href={`/shop/${product.id}`}>
                         <ProductCard {...product} />
