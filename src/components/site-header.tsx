@@ -1,8 +1,12 @@
+"use client"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Phone, ShoppingCart, Heart } from "lucide-react"
 import Image from "next/image"
 
 export function SiteHeader() {
+  const pathname = usePathname()
+
   return (
     <header className="w-full ">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -42,22 +46,28 @@ export function SiteHeader() {
           </Link>
         </div>
       </div>
-      <nav className=" border-t border-[#0000002B]">
+      <nav className="border-t border-[#0000002B]">
         <div className="container flex h-12 pt-3 items-center justify-center gap-6">
-          {["Home", "About Us", "Shop", "Blogs", "Contact Us"].map((item) => (
+          {[
+            { name: "Home", path: "/" },
+            { name: "About Us", path: "/about-us" },
+            { name: "Shop", path: "/shop" },
+            { name: "Blogs", path: "/blogs" },
+            { name: "Contact Us", path: "/contact-us" },
+          ].map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase().replace(" ", "-")}`}
-              className={`text-sm font-medium transition-colors ${item === "Home"
-                ? "text-white bg-[#772B75] px-4 py-1 rounded" // Add padding and rounded corners for the selected item
-                : "text-black"
-                }`}
+              key={item.name}
+              href={item.path}
+              className={`text-sm font-medium transition-colors ${
+                pathname === item.path
+                  ? "text-white bg-[#772B75] px-4 py-1 rounded"
+                  : "text-black"
+              }`}
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </div>
-
       </nav>
     </header>
   )
